@@ -85,8 +85,8 @@ section { position:relative; }
                 <a href="#contact" class="bg-gradient-o text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-cyan/25 text-[15px] hover:scale-[1.02]">
                     제안서 요청 <i class="ph-bold ph-download-simple text-lg"></i>
                 </a>
-                <a href="#how" class="bg-white border-2 border-gray-200 hover:border-cyan text-navy font-bold py-4 px-8 rounded-xl transition-all text-[15px]">
-                    제품 시연 영상
+                <a href="#demo" class="bg-white border-2 border-gray-200 hover:border-cyan text-navy font-bold py-4 px-8 rounded-xl transition-all text-[15px] flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-play-circle text-lg"></i> 제품 시연 영상
                 </a>
             </div>
         </div>
@@ -278,6 +278,79 @@ section { position:relative; }
                 <li class="flex items-start gap-3 text-gray-600 text-[15px] leading-relaxed"><div class="w-1.5 h-1.5 rounded-full bg-cyan mt-2.5 shrink-0"></div>공익과 수익이 선순환하는 B2B2G 모델.</li>
             </ul>
         </div>
+    </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     3.5 DEMO VIDEOS — 실제 작동 시연 영상
+     ═══════════════════════════════════════════ -->
+<section id="demo" class="py-20 bg-darkbg relative overflow-hidden border-t border-white/5">
+<div class="absolute inset-0 opacity-[0.04]" style="background-image:radial-gradient(#fff 1px,transparent 1px);background-size:36px 36px;"></div>
+<div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-12">
+        <span class="inline-block text-cyan text-xs font-bold tracking-widest uppercase inter mb-4">LIVE DEMO</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3 tracking-tight">실제 작동 <span class="text-cyan">시연 영상</span></h2>
+        <p class="text-white/60 text-base">말이 아니라, <strong class="text-white">직접 보여드립니다</strong>. 탭 한 번이면 문이 열립니다.</p>
+    </div>
+    
+    <!-- 영상 2개 그리드 -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Video 1: 욕실 -->
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-5 hover:border-cyan/40 transition-colors">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-cyan-light flex items-center justify-center text-cyan"><i class="ph-fill ph-bathtub text-xl"></i></div>
+                <div>
+                    <p class="text-[10px] text-cyan font-bold tracking-wider inter">SCENE 01</p>
+                    <h3 class="text-lg font-extrabold text-white">욕실 갇힘 상황</h3>
+                </div>
+            </div>
+            <!-- 9:16 비율 컨테이너 -->
+            <div class="relative w-full rounded-2xl overflow-hidden bg-black" style="padding-top:177.77%;">
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/mGtjgNnKX1M"
+                    title="욕실 갇힘 상황 시연"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+            </div>
+            <p class="text-white/50 text-xs mt-4 leading-relaxed">습기로 래치가 고장난 욕실 문. 맘풀 탭을 당기는 순간 즉시 개방됩니다.</p>
+        </div>
+        
+        <!-- Video 2: 방안 -->
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-5 hover:border-cyan/40 transition-colors">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-cyan-light flex items-center justify-center text-cyan"><i class="ph-fill ph-house-line text-xl"></i></div>
+                <div>
+                    <p class="text-[10px] text-cyan font-bold tracking-wider inter">SCENE 02</p>
+                    <h3 class="text-lg font-extrabold text-white">안방 갇힘 상황</h3>
+                </div>
+            </div>
+            <!-- 9:16 비율 컨테이너 -->
+            <div class="relative w-full rounded-2xl overflow-hidden bg-black" style="padding-top:177.77%;">
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/jawcU_-nztA"
+                    title="안방 갇힘 상황 시연"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+            </div>
+            <p class="text-white/50 text-xs mt-4 leading-relaxed">혼자 있는 상황에서 문이 잠겼을 때 — 휴대폰 없이도 탈출 가능합니다.</p>
+        </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="text-center mt-10">
+        <p class="text-white/60 text-sm mb-4">100만 가구에 이 장치가 설치됩니다. <strong class="text-cyan">당신의 브랜드가 함께합니다.</strong></p>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-o text-white font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform shadow-lg shadow-cyan/20 text-sm">
+            파트너십 문의하기 <i class="ph-bold ph-arrow-right"></i>
+        </a>
     </div>
 </div>
 </section>
