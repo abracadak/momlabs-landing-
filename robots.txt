@@ -1,0 +1,34 @@
+# MomLabs Landing Page - robots.txt
+# Public pages: allow all
+# Proposal pages: block all crawlers
+
+User-agent: *
+Allow: /
+Disallow: /anchor-proposal
+Disallow: /anchor-proposal.html
+Disallow: /global-licensing
+Disallow: /global-licensing.html
+Disallow: /proposals/
+Disallow: /confidential/
+
+# Block major crawlers explicitly from proposal pages
+User-agent: Googlebot
+Disallow: /anchor-proposal
+Disallow: /anchor-proposal.html
+Disallow: /global-licensing
+Disallow: /global-licensing.html
+
+User-agent: Bingbot
+Disallow: /anchor-proposal
+Disallow: /anchor-proposal.html
+Disallow: /global-licensing
+Disallow: /global-licensing.html
+
+User-agent: Yeti
+Disallow: /anchor-proposal
+Disallow: /anchor-proposal.html
+Disallow: /global-licensing
+Disallow: /global-licensing.html
+
+# Sitemap (public pages only)
+Sitemap: https://www.momlabs.kr/sitemap.xml

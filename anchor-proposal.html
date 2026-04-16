@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="googlebot" content="noindex,nofollow">
+<title>MomPull — Anchor Partnership Proposal | CONFIDENTIAL</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+tailwind.config = {
+    theme: { extend: {
+        fontFamily: { 
+            sans:['Pretendard','Inter','sans-serif'], 
+            inter:['Inter','sans-serif'],
+            serif:['Lora','serif']
+        },
+        colors: { 
+            navy:{ DEFAULT:'#0A1628', 900:'#050B15', 800:'#0A1628', 700:'#1A2943', 600:'#2C3E5D' },
+            accent:{ DEFAULT:'#C9A961', dark:'#A68B4A', light:'#E8D9AF' },
+            slate:{ 50:'#F8F9FB', 100:'#EEF1F6', 200:'#DDE3EC', 300:'#B8C3D4', 600:'#4A5A73' }
+        }
+    }}
+}
+</script>
+<style>
+body { font-family:'Pretendard','Inter',sans-serif; color:#1E2A3D; background:#FAFBFC; }
+.serif { font-family:'Lora',serif; font-weight:600; letter-spacing:-0.01em; }
+.inter { font-family:'Inter',sans-serif; }
+/* Confidential watermark */
+.confidential-bar { background:linear-gradient(90deg,#0A1628 0%,#1A2943 100%); }
+.watermark-diagonal::before {
+    content: 'CONFIDENTIAL';
+    position: fixed;
+    top: 45%; left: 50%;
+    transform: translate(-50%,-50%) rotate(-30deg);
+    font-size: 180px; font-weight: 900;
+    color: rgba(10,22,40,0.025);
+    pointer-events: none; z-index: 1;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.15em;
+}
+/* Section dividers */
+.section-divider { border-top: 1px solid #DDE3EC; }
+.accent-line { background: linear-gradient(90deg,#C9A961 0%,#E8D9AF 100%); height:3px; width:48px; }
+/* Sidebar TOC */
+.toc-item { border-left: 2px solid transparent; padding-left: 12px; transition: all 0.2s; }
+.toc-item:hover { border-left-color: #C9A961; color: #0A1628; }
+.toc-item.active { border-left-color: #C9A961; color: #0A1628; font-weight: 600; }
+/* Tables */
+.data-table { border-collapse: collapse; }
+.data-table th { background:#F8F9FB; font-weight:600; text-align:left; padding:14px 16px; border-bottom:2px solid #DDE3EC; font-size:12px; color:#4A5A73; letter-spacing:0.05em; text-transform:uppercase; }
+.data-table td { padding:14px 16px; border-bottom:1px solid #EEF1F6; font-size:14px; }
+.data-table tr:hover td { background:#FAFBFC; }
+/* Highlight boxes */
+.pull-quote { border-left: 3px solid #C9A961; padding-left: 20px; font-family:'Lora',serif; font-size:18px; color:#1A2943; font-style:italic; line-height:1.7; }
+.key-figure { font-family:'Inter',sans-serif; font-weight:800; color:#0A1628; font-variant-numeric:tabular-nums; letter-spacing:-0.02em; }
+/* Document header */
+.doc-header { background: linear-gradient(135deg,#0A1628 0%,#1A2943 50%,#2C3E5D 100%); }
+/* Page numbers */
+.page-num::before { content:"§ "; color:#C9A961; font-weight:700; }
+/* Print optimization */
+@media print {
+    .no-print { display:none !important; }
+    body { background:white; }
+}
+/* Smooth anchors */
+section[id] { scroll-margin-top: 100px; }
+</style>
+</head>
+<body class="watermark-diagonal">
+
+<!-- CONFIDENTIAL BAR (TOP) -->
+<div class="confidential-bar text-white py-2.5 text-center text-xs font-bold tracking-widest inter sticky top-0 z-50 shadow-md no-print">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <i class="ph-fill ph-lock text-accent"></i>
+            <span>CONFIDENTIAL · NDA REQUIRED · NOT FOR DISTRIBUTION</span>
+        </div>
+        <div class="hidden md:flex items-center gap-4 text-[11px] text-slate-300">
+            <span>DOCUMENT: MP-AP-2026-001</span>
+            <span>·</span>
+            <span>REVISION: v1.0</span>
+            <span>·</span>
+            <span id="today-date"></span>
+        </div>
+    </div>
+</div>
+
+<!-- DOCUMENT HEADER -->
+<header class="doc-header text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+    <div class="max-w-5xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div class="flex items-center gap-2.5 mb-10">
+            <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center text-navy shadow-lg"><i class="ph-fill ph-door-open text-xl"></i></div>
+            <span class="text-lg font-bold tracking-tight">MomPull <span class="text-accent">(맘풀)</span></span>
+        </div>
+        <p class="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-5 inter">Strategic Partnership Proposal</p>
+        <h1 class="serif text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">Anchor<br>Partnership<br><span class="text-accent">Offering</span></h1>
+        <div class="accent-line mb-8"></div>
+        <p class="text-white/80 text-lg max-w-2xl leading-relaxed mb-12">
+            대한민국 실내 문짝 7,500만 개 위에 새겨지는 <strong class="text-white">유일한 브랜드</strong>.<br>
+            카테고리를 정의하고, 한 세대를 점유하는 독점 파트너십 제안.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/20 pt-8">
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">DOCUMENT</p>
+                <p class="text-sm font-semibold">MP-AP-2026-001</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">PREPARED FOR</p>
+                <p class="text-sm font-semibold">Strategic Partner</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">ISSUED BY</p>
+                <p class="text-sm font-semibold">MomLabs Inc.</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">STATUS</p>
+                <p class="text-sm font-semibold text-accent">Under NDA</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- MAIN CONTAINER -->
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 relative">
+<div class="grid lg:grid-cols-12 gap-10">
+
+    <!-- SIDEBAR TOC -->
+    <aside class="lg:col-span-3 no-print">
+        <div class="lg:sticky lg:top-24">
+            <p class="text-[10px] text-slate-600 font-bold tracking-widest inter mb-5 uppercase">Table of Contents</p>
+            <nav class="space-y-3 text-[13px] text-slate-600">
+                <a href="#section-1" class="toc-item block hover:text-navy">01 · Executive Summary</a>
+                <a href="#section-2" class="toc-item block hover:text-navy">02 · The Opportunity</a>
+                <a href="#section-3" class="toc-item block hover:text-navy">03 · Package Options</a>
+                <a href="#section-4" class="toc-item block hover:text-navy">04 · ROI Simulation</a>
+                <a href="#section-5" class="toc-item block hover:text-navy">05 · Payment Terms</a>
+                <a href="#section-6" class="toc-item block hover:text-navy">06 · ESG + Tax Benefits</a>
+                <a href="#section-7" class="toc-item block hover:text-navy">07 · Roadmap</a>
+                <a href="#section-8" class="toc-item block hover:text-navy">08 · Patent & IP</a>
+                <a href="#section-9" class="toc-item block hover:text-navy">09 · Contact & NDA</a>
+            </nav>
+            <div class="mt-8 p-4 bg-slate-50 border border-slate-200 rounded-lg">
+                <p class="text-[10px] font-bold text-slate-600 tracking-wider inter mb-2">QUICK FACTS</p>
+                <div class="space-y-2 text-xs">
+                    <div class="flex justify-between"><span class="text-slate-600">Korea Market</span><span class="font-bold text-navy">75M doors</span></div>
+                    <div class="flex justify-between"><span class="text-slate-600">Category Lock</span><span class="font-bold text-navy">Exclusive</span></div>
+                    <div class="flex justify-between"><span class="text-slate-600">Patent Status</span><span class="font-bold text-navy">Filed 18 claims</span></div>
+                    <div class="flex justify-between"><span class="text-slate-600">Term</span><span class="font-bold text-navy">5–10 years</span></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="lg:col-span-9 space-y-20 relative z-10">
+
+<!-- ════════════════════════════════════════════
+     SECTION 01 · EXECUTIVE SUMMARY
+     ════════════════════════════════════════════ -->
+<section id="section-1">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 01</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Executive Summary</h2>
+    
+    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+        MomPull(맘풀)은 대한민국 2,440만 세대의 실내 문짝 <strong class="text-navy">7,500만 개</strong>에 설치되는 
+        세계 최초 <strong class="text-navy">비상 도어 해제 + 오프라인 광고 매체</strong> 통합 인프라입니다. 
+        본 제안서는 <strong class="text-navy">국내 카테고리 단독 앵커 파트너십</strong>에 관한 기밀 자료입니다.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">MARKET</p>
+            <p class="key-figure text-3xl mb-1">75M</p>
+            <p class="text-xs text-slate-600">실내 문짝 (Korea)</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">BRAND EXPOSURE</p>
+            <p class="key-figure text-3xl mb-1">5.4B</p>
+            <p class="text-xs text-slate-600">회 접점 (5년, 100만 가구)</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">INVESTMENT</p>
+            <p class="key-figure text-3xl mb-1">From ₩10B</p>
+            <p class="text-xs text-slate-600">5-year exclusive</p>
+        </div>
+    </div>
+
+    <div class="bg-navy text-white p-8 rounded-lg">
+        <p class="text-[10px] text-accent font-bold tracking-widest inter mb-4">KEY PROPOSITION</p>
+        <p class="serif text-xl leading-relaxed">
+            "경쟁사가 잡기 전에 한 세대의 가정을 점유할 수 있는 마지막 오프라인 카테고리. 
+            단 하나의 브랜드만 이 자리에 설 수 있습니다."
+        </p>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 02 · THE OPPORTUNITY
+     ════════════════════════════════════════════ -->
+<section id="section-2" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 02</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">The Opportunity</h2>
+
+    <h3 class="text-xl font-bold text-navy mb-4">2.1 브랜드 접점의 규모 — 54억 회</h3>
+    <p class="text-slate-600 leading-relaxed mb-6">
+        100만 가구 설치 기준, <strong class="text-navy">일 평균 3회 × 365일 × 5년 = 5,475,000,000회</strong>의 
+        물리적 브랜드 접점이 발생합니다. 이는 대한민국 전체 인구가 사용하는 모든 옥외광고 채널을 
+        통틀어 가장 높은 <strong class="text-navy">완전 도달률(100%)</strong>을 보장합니다.
+    </p>
+
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr><th>매체</th><th>월 노출 (100만 명)</th><th>CPM (원)</th><th>Avoidance 가능</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>옥외광고 (전광판)</td><td class="font-semibold">~15M</td><td>5,000 ~ 15,000</td><td>가능</td></tr>
+                <tr><td>엘리베이터 광고</td><td class="font-semibold">~30M</td><td>2,000 ~ 5,000</td><td>부분적</td></tr>
+                <tr><td>지하철 광고</td><td class="font-semibold">~25M</td><td>3,000 ~ 8,000</td><td>가능</td></tr>
+                <tr style="background:#FFF8EA;"><td><strong class="text-navy">MomPull</strong></td><td class="font-semibold">~90M</td><td><strong class="text-navy">~1,850 (번들시 ~600)</strong></td><td><strong class="text-accent-dark">불가능</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">2.2 경쟁사 차단 로직 — Category Lock</h3>
+    <p class="text-slate-600 leading-relaxed mb-6">
+        앵커 파트너는 <strong class="text-navy">국내 카테고리 단독 독점권(Category Exclusivity)</strong>을 
+        확보합니다. 예를 들어 금융 카테고리 앵커는 5년 동안 경쟁 금융사의 MomPull 플랫폼 접근을 
+        완전 차단합니다. 이는 단순 광고 구매가 아닌 <strong class="text-navy">카테고리 정의권</strong>입니다.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+        <div class="border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">SCENARIO A</p>
+            <p class="font-bold text-navy mb-2">귀사가 앵커가 되는 경우</p>
+            <p class="text-sm text-slate-600 leading-relaxed">100만 가정 모든 문짝 위에 귀사 로고. 경쟁사는 5년간 접근 불가.</p>
+        </div>
+        <div class="border border-slate-200 rounded-lg p-6 bg-red-50/30">
+            <p class="text-[10px] text-red-600 font-bold tracking-widest inter mb-2">SCENARIO B</p>
+            <p class="font-bold text-navy mb-2">경쟁사가 앵커가 되는 경우</p>
+            <p class="text-sm text-slate-600 leading-relaxed">귀사는 5~10년 동안 이 카테고리에 진입 불가. 복구 불가능한 기회비용.</p>
+        </div>
+    </div>
+
+    <div class="pull-quote">
+        "이 제안서를 테이블에 올려놓는 순간, 시간은 귀사의 편이 아닙니다. 
+        매 순간 다른 기업이 같은 자료를 검토하고 있습니다."
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 03 · PACKAGE OPTIONS
+     ════════════════════════════════════════════ -->
+<section id="section-3" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 03</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Package Options</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        귀사의 전략적 목표에 따라 <strong class="text-navy">3가지 패키지</strong> 중 선택 가능합니다. 
+        모든 조건은 NDA 기반 협의를 통해 최종 확정됩니다.
+    </p>
+
+    <!-- Package Cards Stacked -->
+    <div class="space-y-6">
+
+        <!-- Package 1: KOREA Anchor -->
+        <div class="bg-white border border-slate-300 rounded-lg p-8 lg:p-10">
+            <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+                <div class="lg:w-1/3">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-2xl">🇰🇷</span>
+                        <span class="text-[10px] text-accent font-bold tracking-widest inter">PACKAGE A</span>
+                    </div>
+                    <h3 class="serif text-2xl font-bold text-navy mb-2">KOREA Anchor</h3>
+                    <p class="text-slate-600 text-sm mb-6">국내 카테고리 단독 독점</p>
+                    <div class="border-t border-slate-200 pt-5">
+                        <p class="text-[10px] text-slate-600 font-bold tracking-widest inter mb-2">INVESTMENT</p>
+                        <p class="key-figure text-4xl mb-1">From ₩10B</p>
+                        <p class="text-xs text-slate-600">5-year term</p>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">INCLUSIONS</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span><strong class="text-navy">한국 100만 문짝 L3 독점</strong> · 전면 플레이트 로고 영구 각인</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span><strong class="text-navy">국내 카테고리 경쟁사 완전 차단</strong> · 5년간 배타적 접근권</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span>맘풀 플랫폼 QR 내 <strong class="text-navy">파트너 전용 채널 우선 노출</strong></span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span>ESG 공시 자료 제공 (K-ESG S-8, KCGS, MSCI)</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span>GRI 413-1, 203-1 보고서 기재용 데이터 연간 제공</span></li>
+                    </ul>
+                    <div class="bg-slate-50 border-l-3 border-accent pl-5 py-3 rounded-r">
+                        <p class="text-sm text-slate-700 italic">실효 CPM: 약 <strong class="text-navy not-italic">1,850원</strong> · ROI 시나리오별 분석은 §04 참조</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package 2: KOREA + USA Bundle (BEST) -->
+        <div class="bg-navy text-white border-2 border-accent rounded-lg p-8 lg:p-10 relative">
+            <div class="absolute -top-3 right-8 bg-accent text-navy text-[10px] font-black px-4 py-1.5 rounded-full tracking-widest inter shadow-lg">★ RECOMMENDED</div>
+            <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+                <div class="lg:w-1/3">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-2xl">🇰🇷</span>
+                        <i class="ph-bold ph-plus text-accent"></i>
+                        <span class="text-2xl">🇺🇸</span>
+                        <span class="text-[10px] text-accent font-bold tracking-widest inter ml-2">PACKAGE B</span>
+                    </div>
+                    <h3 class="serif text-2xl font-bold mb-2">KOREA + USA Bundle</h3>
+                    <p class="text-white/70 text-sm mb-6">한국 독점 + 미국 선점 옵션</p>
+                    <div class="border-t border-white/20 pt-5">
+                        <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">INVESTMENT</p>
+                        <p class="key-figure text-4xl mb-1 text-white">From ₩12B</p>
+                        <p class="text-xs text-white/60">5-year term + 2-year Refusal</p>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">INCLUSIONS</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3 text-sm text-white/90"><i class="ph-bold ph-check text-accent mt-1"></i><span>Package A <strong>전체 포함</strong> (한국 100만 문짝 L3 독점)</span></li>
+                        <li class="flex items-start gap-3 text-sm text-white/90"><i class="ph-bold ph-check text-accent mt-1"></i><span><strong class="text-accent">미국 Master License 우선협상권(First Refusal) 2년</strong></span></li>
+                        <li class="flex items-start gap-3 text-sm text-white/90"><i class="ph-bold ph-check text-accent mt-1"></i><span>미국 시장 진출 시 <strong class="text-accent">로열티 3% 할인</strong> (기본 8% → 5%)</span></li>
+                        <li class="flex items-start gap-3 text-sm text-white/90"><i class="ph-bold ph-check text-accent mt-1"></i><span>한국-미국 <strong class="text-accent">브랜드 크로스 캠페인</strong> 공동 기획</span></li>
+                        <li class="flex items-start gap-3 text-sm text-white/90"><i class="ph-bold ph-check text-accent mt-1"></i><span>미국 경쟁사 차단 (Coca-Cola, AIG, State Farm 등)</span></li>
+                    </ul>
+                    <div class="bg-white/5 border border-white/10 rounded p-4 backdrop-blur-sm">
+                        <p class="text-sm text-white/85 leading-relaxed">
+                            <strong class="text-accent">왜 이 번들인가:</strong> +₩2B 투자로 7억 문(미국) 시장 선점권 확보. 
+                            실효 CPM 약 <strong>600원</strong>으로 급감. 2년 내 미진출 시 권리 환수(맘랩스 손해 0).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package 3: Enterprise Custom -->
+        <div class="bg-white border border-slate-300 rounded-lg p-8 lg:p-10">
+            <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+                <div class="lg:w-1/3">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="ph-fill ph-crown text-accent text-xl"></i>
+                        <span class="text-[10px] text-accent font-bold tracking-widest inter">PACKAGE C</span>
+                    </div>
+                    <h3 class="serif text-2xl font-bold text-navy mb-2">Enterprise Custom</h3>
+                    <p class="text-slate-600 text-sm mb-6">맞춤 글로벌 패키지</p>
+                    <div class="border-t border-slate-200 pt-5">
+                        <p class="text-[10px] text-slate-600 font-bold tracking-widest inter mb-2">INVESTMENT</p>
+                        <p class="key-figure text-4xl mb-1">Bespoke</p>
+                        <p class="text-xs text-slate-600">Direct negotiation</p>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">OPTIONS</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span>다국가 동시 진입 (한국 + 미국 + 일본 또는 EU)</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span>기술 이전 및 JV(Equity Swap) 구조 협의</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span>계약 기간 10년 확장 · 후속 라인업 우선 참여권</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i class="ph-bold ph-check text-accent mt-1"></i><span>브랜드별 차별화 하드웨어 디자인 협업</span></li>
+                    </ul>
+                    <p class="text-xs text-slate-600 italic">* Package C는 CEO 직접 협의 대상입니다. §09의 연락처로 문의 바랍니다.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="text-xs text-slate-600 mt-8 leading-relaxed">
+        <strong>* 가격 제어:</strong> 상기 "From" 금액은 기준점입니다. 카테고리 · 수량 · 기간 · 추가 권리에 따라 조정됩니다. 
+        최종 조건은 NDA 기반 개별 협의를 통해 확정됩니다. 상기 제시 조건은 초안이며, 법적 구속력은 계약서 체결 시에만 발생합니다.
+    </p>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 04 · ROI SIMULATION
+     ════════════════════════════════════════════ -->
+<section id="section-4" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 04</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">ROI Simulation</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        아래 4개 시나리오는 <strong class="text-navy">업계 평균 기준 예시</strong>입니다. 
+        파트너 사의 실제 데이터 기반 재계산은 계약 협의 단계에서 제공됩니다.
+    </p>
+
+    <!-- Scenario 1: 보험사 -->
+    <div class="bg-white border border-slate-200 rounded-lg p-8 mb-6">
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded bg-navy text-accent flex items-center justify-center"><i class="ph-fill ph-shield-check text-xl"></i></div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">SCENARIO 01</p>
+                <h3 class="serif text-xl font-bold text-navy">생명보험사</h3>
+            </div>
+        </div>
+        <table class="data-table w-full mb-4">
+            <tbody>
+                <tr><td class="text-slate-600 w-1/2">신규 가입 CPA (업계 평균)</td><td class="font-semibold text-right">₩300,000 / 건</td></tr>
+                <tr><td class="text-slate-600">예상 전환율 (연 0.3%)</td><td class="font-semibold text-right">3,000건 / 년</td></tr>
+                <tr><td class="text-slate-600">연 직접 매출</td><td class="font-semibold text-right">₩900,000,000</td></tr>
+                <tr><td class="text-slate-600">5년 누적 신규 매출</td><td class="font-semibold text-right">₩4,500,000,000</td></tr>
+                <tr style="background:#FFF8EA;"><td class="font-bold text-navy">브랜드 가치 상승 + ESG 성과 포함 BEP</td><td class="font-bold text-navy text-right">3~4 Years</td></tr>
+            </tbody>
+        </table>
+        <p class="text-xs text-slate-600 italic">* 보험 FC 2.5만 명의 소멸성 판촉물(달력·우산·물티슈) 예산을 영구적 안전 자산으로 전환.</p>
+    </div>
+
+    <!-- Scenario 2: 통신사 -->
+    <div class="bg-white border border-slate-200 rounded-lg p-8 mb-6">
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded bg-navy text-accent flex items-center justify-center"><i class="ph-fill ph-broadcast text-xl"></i></div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">SCENARIO 02</p>
+                <h3 class="serif text-xl font-bold text-navy">통신사</h3>
+            </div>
+        </div>
+        <table class="data-table w-full mb-4">
+            <tbody>
+                <tr><td class="text-slate-600 w-1/2">가입자 LTV (업계 평균)</td><td class="font-semibold text-right">₩600,000 / 인</td></tr>
+                <tr><td class="text-slate-600">예상 전환율 (연 0.2%)</td><td class="font-semibold text-right">2,000명 / 년</td></tr>
+                <tr><td class="text-slate-600">연 LTV 기여</td><td class="font-semibold text-right">₩1,200,000,000</td></tr>
+                <tr><td class="text-slate-600">5년 누적 LTV</td><td class="font-semibold text-right">₩6,000,000,000</td></tr>
+                <tr style="background:#FFF8EA;"><td class="font-bold text-navy">오프라인 터치포인트 확장 가치 포함 BEP</td><td class="font-bold text-navy text-right">2~3 Years</td></tr>
+            </tbody>
+        </table>
+        <p class="text-xs text-slate-600 italic">* IoT/스마트홈 전략의 물리적 터치포인트 100만 개 확보 — 최저비용 진입점.</p>
+    </div>
+
+    <!-- Scenario 3: 건설사 -->
+    <div class="bg-white border border-slate-200 rounded-lg p-8 mb-6">
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded bg-navy text-accent flex items-center justify-center"><i class="ph-fill ph-buildings text-xl"></i></div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">SCENARIO 03</p>
+                <h3 class="serif text-xl font-bold text-navy">건설사</h3>
+            </div>
+        </div>
+        <table class="data-table w-full mb-4">
+            <tbody>
+                <tr><td class="text-slate-600 w-1/2">신규 분양 세대당 가치 창출</td><td class="font-semibold text-right">₩500,000 / 세대</td></tr>
+                <tr><td class="text-slate-600">연 분양 세대 (대형사 기준)</td><td class="font-semibold text-right">15,000 세대 / 년</td></tr>
+                <tr><td class="text-slate-600">차별화 분양가 상승 기여</td><td class="font-semibold text-right">₩7,500,000,000 / 년</td></tr>
+                <tr><td class="text-slate-600">5년 누적 분양 기여</td><td class="font-semibold text-right">₩37,500,000,000</td></tr>
+                <tr style="background:#FFF8EA;"><td class="font-bold text-navy">분양 경쟁력 + ESG 건설 배점 포함 BEP</td><td class="font-bold text-navy text-right">1~2 Years</td></tr>
+            </tbody>
+        </table>
+        <p class="text-xs text-slate-600 italic">* "안전까지 설계한 아파트" 포지셔닝 — 입주민 각인 + 분양가 프리미엄.</p>
+    </div>
+
+    <!-- Scenario 4: 자동차 -->
+    <div class="bg-white border border-slate-200 rounded-lg p-8 mb-6">
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded bg-navy text-accent flex items-center justify-center"><i class="ph-fill ph-car-profile text-xl"></i></div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">SCENARIO 04</p>
+                <h3 class="serif text-xl font-bold text-navy">자동차 (프리미엄 브랜드)</h3>
+            </div>
+        </div>
+        <table class="data-table w-full mb-4">
+            <tbody>
+                <tr><td class="text-slate-600 w-1/2">차량 구매 주기 (평균)</td><td class="font-semibold text-right">7 Years</td></tr>
+                <tr><td class="text-slate-600">맘풀 노출 수명</td><td class="font-semibold text-right">5~10 Years</td></tr>
+                <tr><td class="text-slate-600">연 전환 신규 고객</td><td class="font-semibold text-right">500명 / 년</td></tr>
+                <tr><td class="text-slate-600">평균 차량 가격 (프리미엄)</td><td class="font-semibold text-right">₩70,000,000</td></tr>
+                <tr><td class="text-slate-600">5년 누적 매출</td><td class="font-semibold text-right">₩175,000,000,000</td></tr>
+                <tr style="background:#FFF8EA;"><td class="font-bold text-navy">가정 내 365일 브랜드 각인 효과 포함 BEP</td><td class="font-bold text-navy text-right">< 1 Year</td></tr>
+            </tbody>
+        </table>
+        <p class="text-xs text-slate-600 italic">* "우리 집 문에 제네시스/벤츠/BMW가 있다" — 프리미엄 라이프스타일 포지셔닝.</p>
+    </div>
+
+    <div class="pull-quote mt-10">
+        "ROI가 가장 빠른 업종은 <strong class="not-italic text-navy">자동차(1년 이내)</strong>이며, 
+        가장 큰 규모의 BEP는 <strong class="not-italic text-navy">건설사(1~2년)</strong>입니다. 
+        보험사·통신사는 2~4년 BEP로 안정적인 ROI를 확보합니다."
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 05 · PAYMENT TERMS
+     ════════════════════════════════════════════ -->
+<section id="section-5" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 05</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Payment Terms</h2>
+
+    <h3 class="text-xl font-bold text-navy mb-4">5.1 기본 납부 구조 — 3단계 분할</h3>
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr><th>구분</th><th>비율</th><th>시점</th><th>비고</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="font-semibold text-navy">계약금 (Contract Deposit)</td><td class="font-semibold">30%</td><td>계약 체결 즉시</td><td>법적 구속력 발생</td></tr>
+                <tr><td class="font-semibold text-navy">중도금 (Milestone Payment)</td><td class="font-semibold">40%</td><td>10만 대 설치 완료 시</td><td>Y1~Y2 예상</td></tr>
+                <tr><td class="font-semibold text-navy">잔금 (Final Payment)</td><td class="font-semibold">30%</td><td>50만 대 설치 완료 시</td><td>Y3~Y4 예상</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">5.2 분할 납부 옵션 — 5년 균등</h3>
+    <p class="text-slate-600 leading-relaxed mb-6">
+        예산 집행 유연성을 위해 <strong class="text-navy">5년 균등 분할 납부</strong> 선택 가능. 
+        연간 ₩2B (Package A) 또는 ₩2.4B (Package B) 기준, ESG 예산 및 광고선전비 항목으로 집행.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">OPTION 1 · Milestone</p>
+            <p class="font-bold text-navy mb-2">30% / 40% / 30%</p>
+            <p class="text-sm text-slate-600 leading-relaxed">설치 진행 연동. 리스크 최소화 구조.</p>
+        </div>
+        <div class="bg-navy text-white rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">OPTION 2 · 5-Year Equal</p>
+            <p class="font-bold mb-2">20% × 5 Years</p>
+            <p class="text-sm text-white/80 leading-relaxed">연 ₩2B / ₩2.4B. 예산 항목 배분 용이.</p>
+        </div>
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">5.3 Early Bird 인센티브</h3>
+    <div class="bg-slate-50 border-l-3 border-accent pl-6 py-5 rounded-r">
+        <p class="text-slate-700 leading-relaxed">
+            <strong class="text-navy">Y1 1H (2026.H1) 내 계약 체결 시:</strong>
+        </p>
+        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><i class="ph-bold ph-star text-accent mt-1"></i>계약 기간 <strong class="text-navy">+1년 무상 연장</strong> (5년 → 6년)</li>
+            <li class="flex items-start gap-2"><i class="ph-bold ph-star text-accent mt-1"></i>Package B로 업그레이드 시 <strong class="text-navy">미국 First Refusal 기간 3년으로 연장</strong></li>
+            <li class="flex items-start gap-2"><i class="ph-bold ph-star text-accent mt-1"></i>후속 제품군 <strong class="text-navy">우선협상권 자동 부여</strong></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 06 · ESG + TAX BENEFITS
+     ════════════════════════════════════════════ -->
+<section id="section-6" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 06</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">ESG & Tax Benefits</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        본 파트너십은 <strong class="text-navy">세무상 전액 비용 처리 + ESG 등급 상승 + GRI 보고서 기재</strong>의 
+        3중 재무적 이점을 제공합니다.
+    </p>
+
+    <!-- Tax -->
+    <h3 class="text-xl font-bold text-navy mb-4">6.1 세무 효과</h3>
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr><th>계정 과목</th><th>분류</th><th>처리 한도</th><th>절세 효과</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="font-semibold">광고선전비</td><td>판매관리비</td><td class="font-semibold">전액 손금 인정</td><td>법인세 22% 절감</td></tr>
+                <tr><td class="font-semibold">사회공헌 기부금</td><td>특례기부금</td><td class="font-semibold">소득금액 10%</td><td>법인세 22% 절감</td></tr>
+                <tr style="background:#FFF8EA;"><td class="font-bold text-navy">하이브리드 구조</td><td class="font-bold text-navy">최적화 배분</td><td class="font-bold text-navy">최대치 활용</td><td class="font-bold text-navy">실효 납세액 최소화</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ESG -->
+    <h3 class="text-xl font-bold text-navy mb-4">6.2 ESG 점수 반영</h3>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">K-ESG</p>
+            <p class="font-bold text-navy mb-2">S-8 지역사회 참여</p>
+            <p class="text-xs text-slate-600 leading-relaxed">산업통상자원부 K-ESG 가이드라인 직접 매핑. 등급 상승 기여.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">KCGS</p>
+            <p class="font-bold text-navy mb-2">사회(S) 지역사회 공헌</p>
+            <p class="text-xs text-slate-600 leading-relaxed">한국ESG기준원 지배구조 평가 배점 반영.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">MSCI</p>
+            <p class="font-bold text-navy mb-2">Community Relations</p>
+            <p class="text-xs text-slate-600 leading-relaxed">글로벌 ESG 평가기관 MSCI 가점 요인.</p>
+        </div>
+    </div>
+
+    <!-- GRI -->
+    <h3 class="text-xl font-bold text-navy mb-4">6.3 GRI 공시 기준 충족</h3>
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-8">
+        <table class="data-table w-full">
+            <thead>
+                <tr><th>GRI 지표</th><th>항목</th><th>맘풀 제공 데이터</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="font-semibold font-mono">GRI 413-1</td><td>지역사회 참여</td><td>설치 가구 수 · 복지 연계 성과</td></tr>
+                <tr><td class="font-semibold font-mono">GRI 203-1</td><td>간접 경제 효과</td><td>고독사 예방 효과 추정치</td></tr>
+                <tr><td class="font-semibold font-mono">SDG 3 / 10 / 11</td><td>건강 · 불평등 · 지속가능도시</td><td>증빙 자료 연간 누적 제공</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pull-quote">
+        "광고비로 집행하면서 ESG 점수가 오르고, 세무상 전액 비용 처리되며, 
+        GRI 보고서에 기재 가능한 3중 구조. 현재 국내에 유사 구조의 상품은 존재하지 않습니다."
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 07 · ROADMAP
+     ════════════════════════════════════════════ -->
+<section id="section-7" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 07</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Roadmap</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        5년 설치 로드맵. 각 단계는 계약금·중도금·잔금 지급 시점과 연동됩니다.
+    </p>
+
+    <!-- Timeline -->
+    <div class="space-y-6">
+        <!-- Y1 -->
+        <div class="flex gap-6">
+            <div class="flex-shrink-0 w-24 pt-1">
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">YEAR 01</p>
+                <p class="key-figure text-3xl text-navy">2026</p>
+            </div>
+            <div class="flex-1 border-l-2 border-accent pl-6 pb-6 relative">
+                <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow"></div>
+                <h3 class="font-bold text-navy mb-2">Foundation — 10만 대 설치</h3>
+                <ul class="text-sm text-slate-600 space-y-1.5">
+                    <li>· 금형 제작 완료 · 1차 양산 10만 대</li>
+                    <li>· 지자체 3~5개 시범 보급 (서울·경기 우선)</li>
+                    <li>· 앵커 로고 각인 버전 출시</li>
+                    <li>· 계약금 30% 집행 · 중도금 40% 진입</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Y2 -->
+        <div class="flex gap-6">
+            <div class="flex-shrink-0 w-24 pt-1">
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">YEAR 02</p>
+                <p class="key-figure text-3xl text-navy">2027</p>
+            </div>
+            <div class="flex-1 border-l-2 border-accent pl-6 pb-6 relative">
+                <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow"></div>
+                <h3 class="font-bold text-navy mb-2">Expansion — 30만 대 누적</h3>
+                <ul class="text-sm text-slate-600 space-y-1.5">
+                    <li>· 지자체 10~15개 확장</li>
+                    <li>· 통신사·복지부 연계 본격화</li>
+                    <li>· Living Signal 시스템 전면 가동</li>
+                    <li>· 중도금 40% 완납</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Y3 -->
+        <div class="flex gap-6">
+            <div class="flex-shrink-0 w-24 pt-1">
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">YEAR 03</p>
+                <p class="key-figure text-3xl text-navy">2028</p>
+            </div>
+            <div class="flex-1 border-l-2 border-accent pl-6 pb-6 relative">
+                <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow"></div>
+                <h3 class="font-bold text-navy mb-2">Scale — 50만 대 누적</h3>
+                <ul class="text-sm text-slate-600 space-y-1.5">
+                    <li>· 전국 대부분 지자체 커버</li>
+                    <li>· Package B 선택시 미국 진출 개시</li>
+                    <li>· 잔금 30% 진입</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Y4 -->
+        <div class="flex gap-6">
+            <div class="flex-shrink-0 w-24 pt-1">
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">YEAR 04</p>
+                <p class="key-figure text-3xl text-navy">2029</p>
+            </div>
+            <div class="flex-1 border-l-2 border-accent pl-6 pb-6 relative">
+                <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow"></div>
+                <h3 class="font-bold text-navy mb-2">Dominance — 80만 대 누적</h3>
+                <ul class="text-sm text-slate-600 space-y-1.5">
+                    <li>· 시장 지배력 확립</li>
+                    <li>· 추가 서비스(IoT/CSR) 옵션 개방</li>
+                    <li>· 잔금 30% 완납</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Y5 -->
+        <div class="flex gap-6">
+            <div class="flex-shrink-0 w-24 pt-1">
+                <p class="text-[10px] text-accent font-bold tracking-widest inter">YEAR 05</p>
+                <p class="key-figure text-3xl text-navy">2030</p>
+            </div>
+            <div class="flex-1 border-l-2 border-accent pl-6 relative">
+                <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow ring-4 ring-accent/20"></div>
+                <h3 class="font-bold text-navy mb-2">Completion — 100만 대 달성</h3>
+                <ul class="text-sm text-slate-600 space-y-1.5">
+                    <li>· 100만 가구 인프라 완성</li>
+                    <li>· 계약 갱신 협의 개시 (+5년 연장 옵션)</li>
+                    <li>· 5년 총 54억 회 브랜드 접점 달성</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 08 · PATENT & IP PROTECTION
+     ════════════════════════════════════════════ -->
+<section id="section-8" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 08</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Patent & IP Protection</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        본 카테고리는 맘랩스(MomLabs Inc.)가 <strong class="text-navy">청구항 18항</strong>으로 
+        권리 범위를 확보한 특허 기술에 의해 보호됩니다. 이 카테고리에 진입하는 유일한 열쇠는 맘풀과의 파트너십입니다.
+    </p>
+
+    <!-- IP Specs -->
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <tbody>
+                <tr><td class="text-slate-600 w-2/5">특허 상태</td><td class="font-semibold"><span class="bg-accent text-navy text-[10px] px-2 py-1 rounded font-bold tracking-wider inter">FILED</span> 출원중 (청구항 18항)</td></tr>
+                <tr><td class="text-slate-600">국내 출원</td><td class="font-semibold">완료 (KIPO)</td></tr>
+                <tr><td class="text-slate-600">PCT 국제출원</td><td class="font-semibold">병행 진행중</td></tr>
+                <tr><td class="text-slate-600">권리 범위</td><td class="font-semibold">하드웨어 구조 · 비상 대응 프로세스 · 광고 탭 · QR/NFC 수익 모델</td></tr>
+                <tr><td class="text-slate-600">IP 가치평가</td><td class="font-semibold">조정 IP 가치 약 ₩50B · 외부 기관 평가 완료</td></tr>
+                <tr><td class="text-slate-600">글로벌 진출 대상국</td><td class="font-semibold">🇰🇷 🇺🇸 🇨🇳 🇯🇵 🇪🇺 (5개국)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">8.1 IP 보호의 의미</h3>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+            <i class="ph-fill ph-lock-key text-accent text-2xl mb-3"></i>
+            <p class="font-bold text-navy mb-2 text-sm">카테고리 잠금</p>
+            <p class="text-xs text-slate-600 leading-relaxed">경쟁사가 유사 구조에 광고를 결합하면 특허 침해 성립.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+            <i class="ph-fill ph-shield-check text-accent text-2xl mb-3"></i>
+            <p class="font-bold text-navy mb-2 text-sm">법적 안정성</p>
+            <p class="text-xs text-slate-600 leading-relaxed">앵커 파트너십 존속 기간 동안 권리 보호 지속.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-5">
+            <i class="ph-fill ph-globe text-accent text-2xl mb-3"></i>
+            <p class="font-bold text-navy mb-2 text-sm">글로벌 확장</p>
+            <p class="text-xs text-slate-600 leading-relaxed">PCT 기반 5개국 동시 진입 · 라이선스 수익 기반 구축.</p>
+        </div>
+    </div>
+
+    <div class="pull-quote">
+        "이 카테고리에 들어오는 유일한 열쇠는 맘풀과의 파트너십입니다. 
+        직접 만들 수 없습니다. 우회할 수 없습니다. 우리와 손잡는 수밖에 없습니다."
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SECTION 09 · CONTACT & NDA
+     ════════════════════════════════════════════ -->
+<section id="section-9" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 09</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Contact & Next Steps</h2>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-4">ISSUING COMPANY</p>
+            <h3 class="serif text-2xl font-bold text-navy mb-1">MomLabs Inc.</h3>
+            <p class="text-slate-600 text-sm mb-6">(주)맘랩스 · Founded 2026.04.15</p>
+            <div class="space-y-3 text-sm">
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">CEO</p><p class="font-semibold text-navy">황신욱 (Shinwook Hwang)</p></div>
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">전략 · 특허 · IP</p><p class="font-semibold text-navy">이진호 (Jinho Lee) · Founder</p></div>
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">ADDRESS</p><p class="font-semibold text-navy">경기도 김포시 고촌읍 고송로 20, 215호 (쉴가빌딩)</p></div>
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">PHONE</p><p class="font-semibold text-navy">070-4042-5634</p></div>
+            </div>
+        </div>
+        <div class="bg-navy text-white rounded-lg p-8">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-4">NEXT STEPS</p>
+            <h3 class="serif text-2xl font-bold mb-6">4-Step Process</h3>
+            <ol class="space-y-4">
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">1</span>
+                    <div><p class="font-bold">NDA 체결</p><p class="text-xs text-white/70">상호 비밀유지계약 (1주일 이내)</p></div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">2</span>
+                    <div><p class="font-bold">임원 미팅</p><p class="text-xs text-white/70">CEO + C-level 직접 프리젠테이션</p></div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">3</span>
+                    <div><p class="font-bold">맞춤 제안 수정</p><p class="text-xs text-white/70">귀사 데이터 기반 ROI 재계산</p></div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">4</span>
+                    <div><p class="font-bold">계약 체결</p><p class="text-xs text-white/70">Term Sheet → Main Agreement</p></div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 mb-8">
+        <p class="text-[10px] text-slate-600 font-bold tracking-widest inter mb-3">LEGAL DISCLAIMER</p>
+        <p class="text-xs text-slate-600 leading-relaxed">
+            본 제안서는 법적 구속력이 없는 초안이며, 수신인과 맘랩스 간 정보 교류 목적으로만 작성되었습니다. 
+            모든 숫자(투자 규모, ROI 시뮬레이션, 시장 전망)는 업계 평균 기준 예시이며, 실제 조건은 NDA 체결 후 
+            개별 협상을 통해 확정됩니다. 본 문서의 복제 · 제3자 공유 · 언론 배포는 엄격히 금지되며, 
+            위반 시 NDA 조항에 따른 손해배상 청구 대상이 됩니다.
+        </p>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="bg-navy text-white rounded-lg p-10 text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10">
+            <p class="text-accent text-xs font-bold tracking-widest inter mb-5">THE DECISION</p>
+            <h3 class="serif text-3xl font-bold mb-4">이 카테고리는 단 한 번만 열립니다.</h3>
+            <p class="text-white/80 mb-8 max-w-xl mx-auto">
+                100만 가구의 안방에 새겨지는 단 하나의 브랜드.<br>
+                귀사가 그 자리에 설 것인지 결정하는 창(Window)은 제한되어 있습니다.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="mailto:contact@momlabs.kr?subject=[Anchor%20Proposal%20Inquiry]%20NDA%20Request" class="bg-accent text-navy font-bold py-4 px-10 rounded-lg hover:bg-accent-light transition-colors inline-flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-envelope"></i> NDA 요청 이메일 발송
+                </a>
+                <a href="tel:07040425634" class="bg-white/10 border border-white/20 text-white font-bold py-4 px-10 rounded-lg hover:bg-white/20 transition-colors inline-flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-phone"></i> 070-4042-5634
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-navy text-white mt-20 py-10 no-print">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
+        <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded bg-accent text-navy flex items-center justify-center"><i class="ph-fill ph-door-open text-sm"></i></div>
+            <span class="font-bold text-white">MomPull (맘풀)</span>
+            <span>·</span>
+            <span>MomLabs Inc.</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>CONFIDENTIAL · NDA REQUIRED</span>
+            <span>·</span>
+            <span id="footer-date"></span>
+            <span>·</span>
+            <span>Patent Filed · Claims 18</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Set today's date
+const today = new Date();
+const dateStr = today.toISOString().split('T')[0];
+document.getElementById('today-date').textContent = dateStr;
+document.getElementById('footer-date').textContent = dateStr;
+
+// TOC active state on scroll
+const sections = document.querySelectorAll('section[id]');
+const tocItems = document.querySelectorAll('.toc-item');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.id;
+            tocItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + id) item.classList.add('active');
+            });
+        }
+    });
+}, { rootMargin: '-30% 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// Disable right-click (mild protection)
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+</script>
+
+</body>
+</html>

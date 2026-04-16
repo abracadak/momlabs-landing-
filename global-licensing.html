@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="googlebot" content="noindex,nofollow">
+<title>MomPull — Global Licensing Proposal | CONFIDENTIAL</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+tailwind.config = {
+    theme: { extend: {
+        fontFamily: { 
+            sans:['Pretendard','Inter','sans-serif'], 
+            inter:['Inter','sans-serif'],
+            serif:['Lora','serif']
+        },
+        colors: { 
+            navy:{ DEFAULT:'#0A1628', 900:'#050B15', 800:'#0A1628', 700:'#1A2943', 600:'#2C3E5D' },
+            accent:{ DEFAULT:'#C9A961', dark:'#A68B4A', light:'#E8D9AF' },
+            slate:{ 50:'#F8F9FB', 100:'#EEF1F6', 200:'#DDE3EC', 300:'#B8C3D4', 600:'#4A5A73' }
+        }
+    }}
+}
+</script>
+<style>
+body { font-family:'Pretendard','Inter',sans-serif; color:#1E2A3D; background:#FAFBFC; }
+.serif { font-family:'Lora',serif; font-weight:600; letter-spacing:-0.01em; }
+.inter { font-family:'Inter',sans-serif; }
+.confidential-bar { background:linear-gradient(90deg,#0A1628 0%,#1A2943 100%); }
+.watermark-diagonal::before {
+    content: 'CONFIDENTIAL';
+    position: fixed;
+    top: 45%; left: 50%;
+    transform: translate(-50%,-50%) rotate(-30deg);
+    font-size: 180px; font-weight: 900;
+    color: rgba(10,22,40,0.025);
+    pointer-events: none; z-index: 1;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.15em;
+}
+.section-divider { border-top: 1px solid #DDE3EC; }
+.accent-line { background: linear-gradient(90deg,#C9A961 0%,#E8D9AF 100%); height:3px; width:48px; }
+.toc-item { border-left: 2px solid transparent; padding-left: 12px; transition: all 0.2s; }
+.toc-item:hover { border-left-color: #C9A961; color: #0A1628; }
+.toc-item.active { border-left-color: #C9A961; color: #0A1628; font-weight: 600; }
+.data-table { border-collapse: collapse; }
+.data-table th { background:#F8F9FB; font-weight:600; text-align:left; padding:14px 16px; border-bottom:2px solid #DDE3EC; font-size:12px; color:#4A5A73; letter-spacing:0.05em; text-transform:uppercase; }
+.data-table td { padding:14px 16px; border-bottom:1px solid #EEF1F6; font-size:14px; }
+.data-table tr:hover td { background:#FAFBFC; }
+.pull-quote { border-left: 3px solid #C9A961; padding-left: 20px; font-family:'Lora',serif; font-size:18px; color:#1A2943; font-style:italic; line-height:1.7; }
+.key-figure { font-family:'Inter',sans-serif; font-weight:800; color:#0A1628; font-variant-numeric:tabular-nums; letter-spacing:-0.02em; }
+.doc-header { background: linear-gradient(135deg,#0A1628 0%,#1A2943 50%,#2C3E5D 100%); }
+@media print { .no-print { display:none !important; } body { background:white; } }
+section[id] { scroll-margin-top: 100px; }
+.country-flag { font-size:32px; line-height:1; }
+</style>
+</head>
+<body class="watermark-diagonal">
+
+<!-- CONFIDENTIAL BAR -->
+<div class="confidential-bar text-white py-2.5 text-center text-xs font-bold tracking-widest inter sticky top-0 z-50 shadow-md no-print">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <i class="ph-fill ph-lock text-accent"></i>
+            <span>CONFIDENTIAL · NDA REQUIRED · NOT FOR DISTRIBUTION</span>
+        </div>
+        <div class="hidden md:flex items-center gap-4 text-[11px] text-slate-300">
+            <span>DOCUMENT: MP-GL-2026-001</span>
+            <span>·</span>
+            <span>REVISION: v1.0</span>
+            <span>·</span>
+            <span id="today-date"></span>
+        </div>
+    </div>
+</div>
+
+<!-- DOCUMENT HEADER -->
+<header class="doc-header text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+    <div class="max-w-5xl mx-auto px-8 py-20 lg:py-28 relative z-10">
+        <div class="flex items-center gap-2.5 mb-10">
+            <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center text-navy shadow-lg"><i class="ph-fill ph-door-open text-xl"></i></div>
+            <span class="text-lg font-bold tracking-tight">MomPull <span class="text-accent">(맘풀)</span></span>
+        </div>
+        <p class="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-5 inter">Global Master License Proposal</p>
+        <h1 class="serif text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">Global<br>Licensing<br><span class="text-accent">Framework</span></h1>
+        <div class="accent-line mb-8"></div>
+        <p class="text-white/80 text-lg max-w-2xl leading-relaxed mb-12">
+            5 Markets. 37 Billion Doors. One Patent-Protected Category.<br>
+            <strong class="text-white">Master License · Exclusive Territory · Royalty + Equity Options.</strong>
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/20 pt-8">
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">DOCUMENT</p>
+                <p class="text-sm font-semibold">MP-GL-2026-001</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">PREPARED FOR</p>
+                <p class="text-sm font-semibold">Regional Licensee</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">ISSUED BY</p>
+                <p class="text-sm font-semibold">MomLabs Inc.</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">STATUS</p>
+                <p class="text-sm font-semibold text-accent">Under NDA</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- MAIN -->
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 relative">
+<div class="grid lg:grid-cols-12 gap-10">
+
+    <!-- SIDEBAR TOC -->
+    <aside class="lg:col-span-3 no-print">
+        <div class="lg:sticky lg:top-24">
+            <p class="text-[10px] text-slate-600 font-bold tracking-widest inter mb-5 uppercase">Table of Contents</p>
+            <nav class="space-y-3 text-[13px] text-slate-600">
+                <a href="#section-1" class="toc-item block hover:text-navy">01 · Patent Portfolio</a>
+                <a href="#section-2" class="toc-item block hover:text-navy">02 · Market Analysis</a>
+                <a href="#section-3" class="toc-item block hover:text-navy">03 · Licensing Options</a>
+                <a href="#section-4" class="toc-item block hover:text-navy">04 · Equity Swap (JV)</a>
+                <a href="#section-5" class="toc-item block hover:text-navy">05 · Minimum Requirements</a>
+                <a href="#section-6" class="toc-item block hover:text-navy">06 · IP Support Package</a>
+                <a href="#section-7" class="toc-item block hover:text-navy">07 · Revenue Projection</a>
+                <a href="#section-8" class="toc-item block hover:text-navy">08 · Contact</a>
+            </nav>
+            <div class="mt-8 p-4 bg-slate-50 border border-slate-200 rounded-lg">
+                <p class="text-[10px] font-bold text-slate-600 tracking-wider inter mb-2">QUICK FACTS</p>
+                <div class="space-y-2 text-xs">
+                    <div class="flex justify-between"><span class="text-slate-600">Total Market</span><span class="font-bold text-navy">37B doors</span></div>
+                    <div class="flex justify-between"><span class="text-slate-600">Countries</span><span class="font-bold text-navy">5 markets</span></div>
+                    <div class="flex justify-between"><span class="text-slate-600">Patent</span><span class="font-bold text-navy">PCT filed</span></div>
+                    <div class="flex justify-between"><span class="text-slate-600">Options</span><span class="font-bold text-navy">License / JV</span></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="lg:col-span-9 space-y-20 relative z-10">
+
+<!-- SECTION 01 · PATENT PORTFOLIO -->
+<section id="section-1">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 01</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Patent Portfolio Overview</h2>
+
+    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+        MomPull is a <strong class="text-navy">patent-protected category-defining platform</strong> that 
+        combines <strong class="text-navy">emergency door-latch release functionality</strong> with 
+        <strong class="text-navy">in-home offline advertising inventory</strong>. The IP portfolio covers 
+        hardware structure, emergency response process, advertising tab, and QR/NFC revenue model — 
+        all consolidated in <strong class="text-navy">18 claims</strong>.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">CLAIMS</p>
+            <p class="key-figure text-3xl mb-1">18</p>
+            <p class="text-xs text-slate-600">Triple-layered protection</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">IP VALUATION</p>
+            <p class="key-figure text-3xl mb-1">~₩50B</p>
+            <p class="text-xs text-slate-600">3rd-party assessed</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">PCT STATUS</p>
+            <p class="key-figure text-3xl mb-1">Filed</p>
+            <p class="text-xs text-slate-600">5-country entry ready</p>
+        </div>
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">1.1 Patent Scope</h3>
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr><th>Claim Category</th><th>Coverage</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="font-semibold text-navy">Hardware Structure</td><td>Elastic polymer · Folded configuration · Strike plate integration · Adhesive/insertion/bending fit</td></tr>
+                <tr><td class="font-semibold text-navy">Emergency Response Process</td><td>Pull-tab actuation · Latch displacement mechanism · Unlocking sequence</td></tr>
+                <tr><td class="font-semibold text-navy">Advertising Tab</td><td>Display surface · Print / Sticker / Engraving / Digital methods · Brand logo integration</td></tr>
+                <tr><td class="font-semibold text-navy">Revenue Model</td><td>QR/NFC tag combination · Advertiser-funded distribution · Rotational ad platform</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pull-quote">
+        "Any competing product that combines a door-safety device with an advertising surface — 
+        regardless of form factor — falls within the claim scope of MomPull's IP portfolio."
+    </div>
+</section>
+
+<!-- SECTION 02 · MARKET ANALYSIS -->
+<section id="section-2" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 02</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Market Analysis</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        5개 국가별 실내 문짝 시장 규모 및 라이선스 진입 전략.
+    </p>
+
+    <!-- Country Cards -->
+    <div class="space-y-5 mb-10">
+
+        <!-- USA -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                <div class="md:w-1/4 flex items-center gap-4">
+                    <span class="country-flag">🇺🇸</span>
+                    <div>
+                        <p class="text-[10px] text-accent font-bold tracking-widest inter">MARKET 01</p>
+                        <p class="font-bold text-navy">United States</p>
+                    </div>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">HOUSEHOLDS</p>
+                    <p class="key-figure text-xl">140M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">TOTAL DOORS</p>
+                    <p class="key-figure text-xl">700M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">LATCH STANDARD</p>
+                    <p class="text-sm font-bold text-navy">ANSI/BHMA A156.2</p>
+                    <p class="text-[10px] text-green-700 font-bold mt-1">✓ Korea-compatible</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- China -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                <div class="md:w-1/4 flex items-center gap-4">
+                    <span class="country-flag">🇨🇳</span>
+                    <div>
+                        <p class="text-[10px] text-accent font-bold tracking-widest inter">MARKET 02</p>
+                        <p class="font-bold text-navy">China</p>
+                    </div>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">HOUSEHOLDS</p>
+                    <p class="key-figure text-xl">510M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">TOTAL DOORS</p>
+                    <p class="key-figure text-xl">2.0B</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">LATCH STANDARD</p>
+                    <p class="text-sm font-bold text-navy">GB 12955</p>
+                    <p class="text-[10px] text-amber-700 font-bold mt-1">⚠ Dedicated tooling</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Japan -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                <div class="md:w-1/4 flex items-center gap-4">
+                    <span class="country-flag">🇯🇵</span>
+                    <div>
+                        <p class="text-[10px] text-accent font-bold tracking-widest inter">MARKET 03</p>
+                        <p class="font-bold text-navy">Japan</p>
+                    </div>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">HOUSEHOLDS</p>
+                    <p class="key-figure text-xl">54M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">TOTAL DOORS</p>
+                    <p class="key-figure text-xl">216M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">LATCH STANDARD</p>
+                    <p class="text-sm font-bold text-navy">JIS A 1521</p>
+                    <p class="text-[10px] text-amber-700 font-bold mt-1">⚠ Dedicated tooling</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EU -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                <div class="md:w-1/4 flex items-center gap-4">
+                    <span class="country-flag">🇪🇺</span>
+                    <div>
+                        <p class="text-[10px] text-accent font-bold tracking-widest inter">MARKET 04</p>
+                        <p class="font-bold text-navy">European Union</p>
+                    </div>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">HOUSEHOLDS</p>
+                    <p class="key-figure text-xl">200M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">TOTAL DOORS</p>
+                    <p class="key-figure text-xl">800M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-slate-600 font-bold inter mb-1">LATCH STANDARD</p>
+                    <p class="text-sm font-bold text-navy">DIN EN 1303</p>
+                    <p class="text-[10px] text-amber-700 font-bold mt-1">⚠ Dedicated tooling</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Korea (reference) -->
+        <div class="bg-navy text-white rounded-lg p-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                <div class="md:w-1/4 flex items-center gap-4">
+                    <span class="country-flag">🇰🇷</span>
+                    <div>
+                        <p class="text-[10px] text-accent font-bold tracking-widest inter">HOME MARKET</p>
+                        <p class="font-bold">South Korea</p>
+                    </div>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-accent font-bold inter mb-1">HOUSEHOLDS</p>
+                    <p class="key-figure text-xl text-white">24.4M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-accent font-bold inter mb-1">TOTAL DOORS</p>
+                    <p class="key-figure text-xl text-white">75M</p>
+                </div>
+                <div class="md:w-1/4">
+                    <p class="text-[10px] text-accent font-bold inter mb-1">LATCH STANDARD</p>
+                    <p class="text-sm font-bold">KS (Korea Standard)</p>
+                    <p class="text-[10px] text-accent font-bold mt-1">★ Direct Operation</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">2.1 Key Insight</h3>
+    <div class="bg-slate-50 border-l-3 border-accent pl-6 py-5 rounded-r">
+        <p class="text-slate-700 leading-relaxed mb-3">
+            <strong class="text-navy">Korea (KS) and USA (ANSI) share compatible latch specifications</strong>, 
+            enabling single tooling for both markets — a 40%+ cost advantage.
+        </p>
+        <p class="text-slate-700 leading-relaxed">
+            China, Japan, and EU require country-specific tooling and separate patent entries, 
+            positioning each as <strong class="text-navy">independent licensing opportunities</strong>.
+        </p>
+    </div>
+</section>
+
+<!-- SECTION 03 · LICENSING OPTIONS -->
+<section id="section-3" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 03</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Licensing Options</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        Upfront + Royalty 구조. 각 국가별 독립 라이선스 · Minimum Guarantee 포함.
+    </p>
+
+    <!-- Main Table -->
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr>
+                    <th>Market</th>
+                    <th>License Type</th>
+                    <th>Upfront</th>
+                    <th>Royalty</th>
+                    <th>Min. Guarantee (Annual)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="country-flag text-xl mr-2">🇺🇸</span> <strong class="text-navy">United States</strong></td>
+                    <td>Master License</td>
+                    <td class="font-bold text-navy">$5M (~₩6.5B)</td>
+                    <td class="font-semibold">5 – 8%</td>
+                    <td class="font-semibold">$1M (~₩1.3B)</td>
+                </tr>
+                <tr>
+                    <td><span class="country-flag text-xl mr-2">🇨🇳</span> <strong class="text-navy">China</strong></td>
+                    <td>Exclusive License</td>
+                    <td class="font-bold text-navy">$10M (~₩13B)</td>
+                    <td class="font-semibold">8 – 12%</td>
+                    <td class="font-semibold">$2M (~₩2.6B)</td>
+                </tr>
+                <tr>
+                    <td><span class="country-flag text-xl mr-2">🇯🇵</span> <strong class="text-navy">Japan</strong></td>
+                    <td>Exclusive License</td>
+                    <td class="font-bold text-navy">$3M (~₩4B)</td>
+                    <td class="font-semibold">7 – 10%</td>
+                    <td class="font-semibold">$500K (~₩650M)</td>
+                </tr>
+                <tr>
+                    <td><span class="country-flag text-xl mr-2">🇪🇺</span> <strong class="text-navy">European Union</strong></td>
+                    <td>Regional License</td>
+                    <td class="font-bold text-navy">$4M (~₩5.2B)</td>
+                    <td class="font-semibold">6 – 9%</td>
+                    <td class="font-semibold">$800K (~₩1.04B)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">UPFRONT PAYMENT</p>
+            <p class="text-sm text-slate-600 leading-relaxed">Paid within 30 days of contract signing. Non-refundable. Grants territorial exclusivity for the defined period.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">ROYALTY RATE</p>
+            <p class="text-sm text-slate-600 leading-relaxed">% of net revenue generated from licensed product sales. Rate depends on volume commitments and exclusivity scope.</p>
+        </div>
+    </div>
+
+    <div class="pull-quote">
+        "Minimum Guarantee ensures baseline revenue regardless of licensee performance. 
+        This is non-negotiable for exclusive territorial grants."
+    </div>
+</section>
+
+<!-- SECTION 04 · EQUITY SWAP -->
+<section id="section-4" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 04</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Equity Swap Option (JV)</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        Alternative to upfront-royalty model: Joint Venture with equity participation.
+    </p>
+
+    <h3 class="text-xl font-bold text-navy mb-4">4.1 JV Structure</h3>
+    <div class="bg-white border border-slate-200 rounded-lg p-8 mb-10">
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">REGIONAL PARTNER</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Establishes local entity in target market</li>
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Provides capital, operations, local sales network</li>
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Holds 70–80% equity</li>
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Manages P&L and local compliance</li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-[10px] text-accent font-bold tracking-widest inter mb-3">MOMLABS</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>IP contribution as equity investment</li>
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Holds 20–30% equity (IP in-kind)</li>
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Technical advisory & quality control</li>
+                    <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Dividend share from JV profits</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">4.2 When to Choose JV vs License</h3>
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr><th>Criterion</th><th>License</th><th>Equity Swap (JV)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="font-semibold">Upfront Capital</td><td>Required ($3M–$10M)</td><td>Not required</td></tr>
+                <tr><td class="font-semibold">Control</td><td>Independent local operation</td><td>Shared governance</td></tr>
+                <tr><td class="font-semibold">Revenue Model</td><td>Royalty on sales</td><td>Dividend on net profit</td></tr>
+                <tr><td class="font-semibold">Risk</td><td>Lower (fixed cost)</td><td>Higher (performance-linked)</td></tr>
+                <tr><td class="font-semibold">Upside</td><td>Capped by royalty rate</td><td>Uncapped · Long-term appreciation</td></tr>
+                <tr><td class="font-semibold">Best for</td><td>Established distributors</td><td>Strategic alliance, mid-long term</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SECTION 05 · MINIMUM PERFORMANCE -->
+<section id="section-5" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 05</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Minimum Performance Requirements</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        License continuity and territorial exclusivity are conditional on meeting 
+        minimum performance metrics.
+    </p>
+
+    <!-- Performance Table -->
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Year 4–5</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="font-semibold text-navy">Min. Units Distributed</td>
+                    <td>10K</td>
+                    <td>50K</td>
+                    <td>200K</td>
+                    <td>500K+</td>
+                </tr>
+                <tr>
+                    <td class="font-semibold text-navy">Min. Revenue (Royalty-based)</td>
+                    <td>50% of MG</td>
+                    <td>75% of MG</td>
+                    <td>100% of MG</td>
+                    <td>100%+</td>
+                </tr>
+                <tr>
+                    <td class="font-semibold text-navy">Brand Standard Compliance</td>
+                    <td>Full</td>
+                    <td>Full</td>
+                    <td>Full</td>
+                    <td>Full</td>
+                </tr>
+                <tr>
+                    <td class="font-semibold text-navy">Quality Audit</td>
+                    <td>Semi-annual</td>
+                    <td>Semi-annual</td>
+                    <td>Annual</td>
+                    <td>Annual</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-bold text-navy mb-4">5.1 Consequences of Non-Performance</h3>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">TIER 01</p>
+            <p class="font-bold text-navy mb-2">Performance Warning</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Miss MG by 25%+ → Written notice · 6-month cure period</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">TIER 02</p>
+            <p class="font-bold text-navy mb-2">Exclusivity Loss</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Miss MG by 50%+ → Lose exclusive territory · Continue as non-exclusive</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">TIER 03</p>
+            <p class="font-bold text-navy mb-2">Termination</p>
+            <p class="text-xs text-slate-600 leading-relaxed">Miss MG by 75%+ → License terminates · Territory reverts to MomLabs</p>
+        </div>
+    </div>
+
+    <div class="pull-quote">
+        "Minimum Performance Requirements protect both parties — MomLabs guarantees baseline revenue, 
+        licensees commit to serious market development."
+    </div>
+</section>
+
+<!-- SECTION 06 · IP SUPPORT -->
+<section id="section-6" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 06</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">IP Support Package</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        All licensees receive a comprehensive IP + technical support package during the entire license term.
+    </p>
+
+    <div class="space-y-6 mb-10">
+        <!-- Support 01 -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex gap-6">
+                <div class="w-12 h-12 rounded-lg bg-navy text-accent flex items-center justify-center flex-shrink-0"><i class="ph-fill ph-files text-2xl"></i></div>
+                <div class="flex-1">
+                    <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">SUPPORT 01</p>
+                    <h3 class="font-bold text-navy text-lg mb-3">금형 도면 제공 (Tooling Drawings)</h3>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Complete technical drawings for local manufacturing</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Material specifications (PP, PE, ABS grades)</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Country-specific latch fitting adjustments (where applicable)</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Quality tolerance guidelines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support 02 -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex gap-6">
+                <div class="w-12 h-12 rounded-lg bg-navy text-accent flex items-center justify-center flex-shrink-0"><i class="ph-fill ph-users-three text-2xl"></i></div>
+                <div class="flex-1">
+                    <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">SUPPORT 02</p>
+                    <h3 class="font-bold text-navy text-lg mb-3">기술 자문 (Technical Advisory)</h3>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>On-site visits: 2 times per year (engineering team)</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Unlimited remote consultation (monthly check-in)</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Product iteration support (next-generation planning)</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Trouble-shooting on manufacturing issues</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support 03 -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex gap-6">
+                <div class="w-12 h-12 rounded-lg bg-navy text-accent flex items-center justify-center flex-shrink-0"><i class="ph-fill ph-megaphone text-2xl"></i></div>
+                <div class="flex-1">
+                    <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">SUPPORT 03</p>
+                    <h3 class="font-bold text-navy text-lg mb-3">공동 마케팅 (Co-Marketing)</h3>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Global brand asset access (logos, collateral, templates)</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Co-branded launch campaigns (country entry support)</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>PR coordination for major announcements</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Industry event joint presence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support 04 -->
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <div class="flex gap-6">
+                <div class="w-12 h-12 rounded-lg bg-navy text-accent flex items-center justify-center flex-shrink-0"><i class="ph-fill ph-shield-star text-2xl"></i></div>
+                <div class="flex-1">
+                    <p class="text-[10px] text-accent font-bold tracking-widest inter mb-1">SUPPORT 04</p>
+                    <h3 class="font-bold text-navy text-lg mb-3">특허 방어 지원 (IP Defense)</h3>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Legal support in IP infringement cases within territory</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Joint action against competing products</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-accent mt-1"></i>Patent maintenance across 5 countries (MomLabs funded)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 07 · REVENUE PROJECTION -->
+<section id="section-7" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 07</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Revenue Projection</h2>
+
+    <p class="text-slate-600 leading-relaxed mb-10">
+        Conservative 5-year revenue projection for MomLabs from global licensing.
+    </p>
+
+    <div class="bg-white border border-slate-200 rounded-lg overflow-hidden mb-10">
+        <table class="data-table w-full">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>USA Royalty</th>
+                    <th>CN / JP / EU Upfront</th>
+                    <th>Royalty (All Markets)</th>
+                    <th>Annual Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="font-semibold">Y1</td><td>$5M (upfront)</td><td>–</td><td>–</td><td class="font-bold text-navy">$5M</td></tr>
+                <tr><td class="font-semibold">Y2</td><td>$1M</td><td>$3M (Japan)</td><td>$500K</td><td class="font-bold text-navy">$4.5M</td></tr>
+                <tr><td class="font-semibold">Y3</td><td>$1M</td><td>$4M (EU)</td><td>$1M</td><td class="font-bold text-navy">$6M</td></tr>
+                <tr><td class="font-semibold">Y4</td><td>$1.5M</td><td>$10M (China)</td><td>$2M</td><td class="font-bold text-navy">$13.5M</td></tr>
+                <tr><td class="font-semibold">Y5</td><td>$2M</td><td>–</td><td>$4M</td><td class="font-bold text-navy">$6M</td></tr>
+                <tr style="background:#FFF8EA;">
+                    <td class="font-bold text-navy">5-Year Total</td>
+                    <td class="font-bold">$10.5M</td>
+                    <td class="font-bold">$17M</td>
+                    <td class="font-bold">$7.5M</td>
+                    <td class="font-bold text-accent text-right">$35M (~₩45B)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">5Y UPFRONT</p>
+            <p class="key-figure text-3xl mb-1">$22M</p>
+            <p class="text-xs text-slate-600">~₩28.6B</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">5Y ROYALTY</p>
+            <p class="key-figure text-3xl mb-1">$13M</p>
+            <p class="text-xs text-slate-600">~₩17B</p>
+        </div>
+        <div class="bg-navy text-white rounded-lg p-6">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-2">5Y TOTAL</p>
+            <p class="key-figure text-3xl mb-1 text-white">$35M+</p>
+            <p class="text-xs text-white/70">~₩45B (conservative)</p>
+        </div>
+    </div>
+
+    <div class="pull-quote">
+        "Upside scenario (all markets fully activated with optimal licensees): 
+        <strong class="not-italic text-navy">$55M+ over 5 years (~₩71B)</strong>."
+    </div>
+</section>
+
+<!-- SECTION 08 · CONTACT -->
+<section id="section-8" class="section-divider pt-20">
+    <div class="flex items-center gap-4 mb-3">
+        <span class="text-accent font-bold text-xs tracking-[0.25em] inter">§ 08</span>
+        <div class="accent-line"></div>
+    </div>
+    <h2 class="serif text-4xl md:text-5xl font-bold text-navy leading-tight mb-8">Contact & Next Steps</h2>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-10">
+        <div class="bg-white border border-slate-200 rounded-lg p-8">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-4">ISSUING COMPANY</p>
+            <h3 class="serif text-2xl font-bold text-navy mb-1">MomLabs Inc.</h3>
+            <p class="text-slate-600 text-sm mb-6">(주)맘랩스 · Founded 2026.04.15 · Republic of Korea</p>
+            <div class="space-y-3 text-sm">
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">CEO</p><p class="font-semibold text-navy">Shinwook Hwang</p></div>
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">Strategy · IP · Licensing</p><p class="font-semibold text-navy">Jinho Lee · Founder</p></div>
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">ADDRESS</p><p class="font-semibold text-navy">215, 20 Gosong-ro, Gochon-eup, Gimpo-si, Gyeonggi-do, Republic of Korea</p></div>
+                <div><p class="text-[10px] text-slate-600 font-bold tracking-wider inter">PHONE</p><p class="font-semibold text-navy">+82-70-4042-5634</p></div>
+            </div>
+        </div>
+        <div class="bg-navy text-white rounded-lg p-8">
+            <p class="text-[10px] text-accent font-bold tracking-widest inter mb-4">LICENSING PROCESS</p>
+            <h3 class="serif text-2xl font-bold mb-6">4-Step Engagement</h3>
+            <ol class="space-y-4">
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">1</span>
+                    <div><p class="font-bold">NDA Execution</p><p class="text-xs text-white/70">Mutual NDA within 1 week</p></div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">2</span>
+                    <div><p class="font-bold">Due Diligence</p><p class="text-xs text-white/70">IP verification · Market analysis</p></div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">3</span>
+                    <div><p class="font-bold">Term Sheet</p><p class="text-xs text-white/70">Customized commercial terms</p></div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="w-8 h-8 rounded-full bg-accent text-navy font-black flex items-center justify-center shrink-0 text-sm">4</span>
+                    <div><p class="font-bold">Master Agreement</p><p class="text-xs text-white/70">License contract execution</p></div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 mb-8">
+        <p class="text-[10px] text-slate-600 font-bold tracking-widest inter mb-3">LEGAL DISCLAIMER</p>
+        <p class="text-xs text-slate-600 leading-relaxed">
+            This document is a non-binding proposal prepared solely for information exchange between the recipient and MomLabs Inc. 
+            All figures (investment scales, royalty rates, market projections) are representative examples based on industry averages. 
+            Final terms will be established through individual negotiation following NDA execution. Reproduction, third-party sharing, 
+            or public disclosure of this document is strictly prohibited and will trigger legal action under the NDA provisions. 
+            Governing law: Republic of Korea. Jurisdiction: Seoul Central District Court.
+        </p>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="bg-navy text-white rounded-lg p-10 text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10">
+            <p class="text-accent text-xs font-bold tracking-widest inter mb-5">GLOBAL PARTNERSHIP</p>
+            <h3 class="serif text-3xl font-bold mb-4">One category. Five markets. Limited licenses.</h3>
+            <p class="text-white/80 mb-8 max-w-xl mx-auto">
+                Each territory opens once. Master License or JV — structured to match your capital and strategic fit.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="mailto:global@momlabs.kr?subject=[Global%20License%20Inquiry]%20NDA%20Request" class="bg-accent text-navy font-bold py-4 px-10 rounded-lg hover:bg-accent-light transition-colors inline-flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-envelope"></i> Request NDA
+                </a>
+                <a href="tel:+82704042634" class="bg-white/10 border border-white/20 text-white font-bold py-4 px-10 rounded-lg hover:bg-white/20 transition-colors inline-flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-phone"></i> +82-70-4042-5634
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-navy text-white mt-20 py-10 no-print">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
+        <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded bg-accent text-navy flex items-center justify-center"><i class="ph-fill ph-door-open text-sm"></i></div>
+            <span class="font-bold text-white">MomPull</span>
+            <span>·</span>
+            <span>MomLabs Inc.</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>CONFIDENTIAL · NDA REQUIRED</span>
+            <span>·</span>
+            <span id="footer-date"></span>
+            <span>·</span>
+            <span>Patent Filed · 18 Claims · PCT Pending</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+const today = new Date();
+const dateStr = today.toISOString().split('T')[0];
+document.getElementById('today-date').textContent = dateStr;
+document.getElementById('footer-date').textContent = dateStr;
+
+const sections = document.querySelectorAll('section[id]');
+const tocItems = document.querySelectorAll('.toc-item');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.id;
+            tocItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + id) item.classList.add('active');
+            });
+        }
+    });
+}, { rootMargin: '-30% 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+</script>
+
+</body>
+</html>
